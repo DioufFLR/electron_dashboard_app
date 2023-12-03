@@ -2,8 +2,9 @@ import {ColorModeContext, useMode} from './theme'
 import {CssBaseline, ThemeProvider} from "@mui/material";
 import {Routes, Route} from "react-router-dom";
 import Topbar from '@/scenes/global/Topbar';
-import Sidebar from "@/scenes/global/ProSidebar";
 import Dashboard from "@/scenes/dashboard";
+import ProSidebar from "@/scenes/global/Sidebar";
+import Sidebar from "@/scenes/global/Sidebar";
 // import Team from "@/scenes/team";
 // import Invoices from "@/scenes/invoices";
 // import Contacts from "@/scenes/contacts";
@@ -16,36 +17,36 @@ import Dashboard from "@/scenes/dashboard";
 // import Calendar from "@/scenes/calendar";
 
 
-
 function App() {
 
-  const[theme, colorMode] = useMode();
+    const [theme, colorMode] = useMode();
 
-  return (
-      <ColorModeContext.Provider value={colorMode}>
-        <ThemeProvider theme={theme}>
-          <CssBaseline />
-          <div  className='app'>
-            <main class="content">
-              <Topbar />
-                <Routes>
-                    <Route paht='/' element={<Dashboard />} />
-                    {/*<Route paht='/team' element={<Team />} />*/}
-                    {/*<Route paht='/contacts' element={<Contacts />} />*/}
-                    {/*<Route paht='/invoices' element={<Invoices />} />*/}
-                    {/*<Route paht='/form' element={<Form />} />*/}
-                    {/*<Route paht='/bar' element={<Bar />} />*/}
-                    {/*<Route paht='/pie' element={<Pie />} />*/}
-                    {/*<Route paht='/line' element={<Line />} />*/}
-                    {/*<Route paht='/faq' element={<FAQ />} />*/}
-                    {/*<Route paht='/geography' element={<Geography />} />*/}
-                    {/*<Route paht='/calendar' element={<Calendar />} />*/}
-                </Routes>
-            </main>
-          </div>
-        </ThemeProvider>
-      </ColorModeContext.Provider>
-  )
+    return (
+        <ColorModeContext.Provider value={ colorMode }>
+            <ThemeProvider theme={ theme }>
+                <CssBaseline/>
+                <div className='app'>
+                    <Sidebar />
+                    <main class="content">
+                        <Topbar/>
+                        <Routes>
+                            <Route paht='/' element={ <Dashboard/> }/>
+                            {/*<Route paht='/team' element={<Team />} />*/ }
+                            {/*<Route paht='/contacts' element={<Contacts />} />*/ }
+                            {/*<Route paht='/invoices' element={<Invoices />} />*/ }
+                            {/*<Route paht='/form' element={<Form />} />*/ }
+                            {/*<Route paht='/bar' element={<Bar />} />*/ }
+                            {/*<Route paht='/pie' element={<Pie />} />*/ }
+                            {/*<Route paht='/line' element={<Line />} />*/ }
+                            {/*<Route paht='/faq' element={<FAQ />} />*/ }
+                            {/*<Route paht='/geography' element={<Geography />} />*/ }
+                            {/*<Route paht='/calendar' element={<Calendar />} />*/ }
+                        </Routes>
+                    </main>
+                </div>
+            </ThemeProvider>
+        </ColorModeContext.Provider>
+    )
 }
 
 export default App

@@ -51,7 +51,6 @@ const Topbar = () =>
                         <PersonOutlinedIcon/>
                     </IconButton>
                 </Box>
-                <IconButton></IconButton>
             </Box>
         </div>
     );

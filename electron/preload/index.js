@@ -1,16 +1,21 @@
-function domReady(condition) {
+function domReady(condition = []) {
   return new Promise(resolve => {
-    if (condition.includes(document.readyState)) {
-      resolve(true)
+    const readyStateCheck = () => {
+      if (condition.includes(document.readyState)) {
+        resolve(true);
+      }
+    };
+
+    if (condition && Array.isArray(condition)) {
+      readyStateCheck();
+
+      document.addEventListener('readystatechange', readyStateCheck);
     } else {
-      document.addEventListener('readystatechange', () => {
-        if (condition.includes(document.readyState)) {
-          resolve(true)
-        }
-      })
+      resolve(false); // Condition is not an array, so resolve with false
     }
-  })
+  });
 }
+
 
 const safeDOM = {
   append(parent, child) {
@@ -90,7 +95,3 @@ window.onmessage = (ev) => {
 }
 
 setTimeout(removeLoading, 4999)
-
-
-
-

@@ -1,11 +1,11 @@
 import {ColorModeContext, useMode} from './theme'
 import {CssBaseline, ThemeProvider} from "@mui/material";
-import {Routes, Route} from "react-router-dom";
+import {Routes, Route, Router} from "react-router-dom";
 import Topbar from '@/scenes/global/Topbar';
 import Dashboard from "@/scenes/dashboard";
 import ProSidebar from "@/scenes/global/Sidebar";
 import Sidebar from "@/scenes/global/Sidebar";
-// import Team from "@/scenes/team";
+import Team from "@/scenes/team";
 // import Invoices from "@/scenes/invoices";
 // import Contacts from "@/scenes/contacts";
 // import Bar from "@/scenes/bar";
@@ -26,21 +26,21 @@ function App() {
             <ThemeProvider theme={ theme }>
                 <CssBaseline/>
                 <div className='app'>
-                    <Sidebar />
-                    <main class="content">
+                    <Sidebar/>
+                    <main className="content">
                         <Topbar/>
                         <Routes>
-                            <Route paht='/' element={ <Dashboard/> }/>
-                            {/*<Route paht='/team' element={<Team />} />*/ }
-                            {/*<Route paht='/contacts' element={<Contacts />} />*/ }
-                            {/*<Route paht='/invoices' element={<Invoices />} />*/ }
-                            {/*<Route paht='/form' element={<Form />} />*/ }
-                            {/*<Route paht='/bar' element={<Bar />} />*/ }
-                            {/*<Route paht='/pie' element={<Pie />} />*/ }
-                            {/*<Route paht='/line' element={<Line />} />*/ }
-                            {/*<Route paht='/faq' element={<FAQ />} />*/ }
-                            {/*<Route paht='/geography' element={<Geography />} />*/ }
-                            {/*<Route paht='/calendar' element={<Calendar />} />*/ }
+                            <Route exact path='/' element={ <Dashboard/> }/>
+                            <Route path='/team' element={ <Team/> }/>
+                            {/*<Route path='/contacts' element={<Contacts />} />*/ }
+                            {/*<Route path='/invoices' element={<Invoices />} />*/ }
+                            {/*<Route path='/form' element={<Form />} />*/ }
+                            {/*<Route path='/bar' element={<Bar />} />*/ }
+                            {/*<Route path='/pie' element={<Pie />} />*/ }
+                            {/*<Route path='/line' element={<Line />} />*/ }
+                            {/*<Route path='/faq' element={<FAQ />} />*/ }
+                            {/*<Route path='/geography' element={<Geography />} />*/ }
+                            {/*<Route path='/calendar' element={<Calendar />} />*/ }
                         </Routes>
                     </main>
                 </div>

@@ -51,7 +51,7 @@ const Invoices = () =>
 
     return (
         <Box m='20px'>
-            <Header title='CONTACTS' subtitle='List of Contacts for Future Reference'/>
+            <Header title='INVOICES' subtitle='List of Invoice Balances'/>
             <Box
                 m='40px 0 0 0'
                 height='70vh'
@@ -76,12 +76,13 @@ const Invoices = () =>
                         borderTop: 'none',
                         backgroundColor: colors.blueAccent[700]
                     },
-                    "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
-                        color: `${ colors.grey[100] } !important`
+                    "& .MuiCheckbox-root": {
+                        colors: `${ colors.greenAccent[200] } !important`
                     }
                 } }
             >
                 <DataGrid columns={ columns }
+                          checkboxSelection
                           rows={ mockDataInvoices }
                 />
             </Box>

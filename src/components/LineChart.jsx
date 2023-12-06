@@ -17,34 +17,34 @@ const LineChart = ( {isDashboard = false} ) =>
                 axis: {
                     domain: {
                         line: {
-                            stroke: colors.grey[100]
-                        }
-                    }
-                },
-                legend: {
-                    text: {
-                        fill: colors.grey[100]
-                    }
-                },
-                ticks: {
-                    line: {
-                        stroke: colors.grey[100],
-                        strokeWidth: 1
+                            stroke: colors.grey[100],
+                        },
                     },
-                    text: {
-                        fill: colors.grey[100]
-                    }
+                    legend: {
+                        text: {
+                            fill: colors.grey[100],
+                        },
+                    },
+                    ticks: {
+                        line: {
+                            stroke: colors.grey[100],
+                            strokeWidth: 1,
+                        },
+                        text: {
+                            fill: colors.grey[100],
+                        },
+                    },
                 },
                 legends: {
                     text: {
-                        fill: colors.grey[100]
-                    }
+                        fill: colors.grey[100],
+                    },
                 },
                 tooltip: {
                     container: {
-                        color: colors.primary[500]
-                    }
-                }
+                        color: colors.primary[500],
+                    },
+                },
             } }
             colors={ isDashboard ? {datum: 'color'} : {scheme: 'nivo'} }
             margin={ {top: 50, right: 110, bottom: 50, left: 60} }

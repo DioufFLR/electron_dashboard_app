@@ -16,30 +16,29 @@ import ProgressCircle from "@/components/ProgressCircle";
 
 const Dashboard = () =>
 {
-
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
 
     return (
-        <Box m='20px'>
+        <Box m="20px">
             {/* HEADER */ }
             <Box display="flex" justifyContent="space-between" alignItems="center">
                 <Header title="DASHBOARD" subtitle="Welcome to your dashboard"/>
-            </Box>
 
-            <Box>
-                <Button
-                    sx={ {
-                        backgroundColor: colors.blueAccent[700],
-                        color: colors.grey[100],
-                        fontSize: '14px',
-                        fontWeight: 'bold',
-                        padding: '10px 20px'
-                    } }
-                >
-                    <DownloadOutlinedIcon sx={ {mr: '10px'} }/>
-                    Download Reports
-                </Button>
+                <Box>
+                    <Button
+                        sx={ {
+                            backgroundColor: colors.blueAccent[700],
+                            color: colors.grey[100],
+                            fontSize: "14px",
+                            fontWeight: "bold",
+                            padding: "10px 20px",
+                        } }
+                    >
+                        <DownloadOutlinedIcon sx={ {mr: "10px"} }/>
+                        Download Reports
+                    </Button>
+                </Box>
             </Box>
 
             {/* GRID & CHARTS */ }
@@ -221,69 +220,66 @@ const Dashboard = () =>
 
                 {/* ROW 3 */ }
                 <Box
-                    gridColumn='span 4'
-                    gridRow='span 2'
+                    gridColumn="span 4"
+                    gridRow="span 2"
                     backgroundColor={ colors.primary[400] }
-                    p='30px'
+                    p="30px"
                 >
-                    <Typography variant='h5' fontWeight='600'>
+                    <Typography variant="h5" fontWeight="600">
                         Campaign
                     </Typography>
                     <Box
-                        display='flex'
-                        flexDirection='column'
-                        alignItems='center'
-                        mt='25px'
+                        display="flex"
+                        flexDirection="column"
+                        alignItems="center"
+                        mt="25px"
                     >
-                        <ProgressCircle size='125'/>
-                        <Typography variant='h5' color={ colors.greenAccent[500] } sx={ {mt: '15px'} }>
-                            48,345€ revenue generated
+                        <ProgressCircle size="125"/>
+                        <Typography
+                            variant="h5"
+                            color={ colors.greenAccent[500] }
+                            sx={ {mt: "15px"} }
+                        >
+                            $48,352 revenue generated
                         </Typography>
-                        <Typography>
-                            Includes extra misc expenditures and costs
-                        </Typography>
+                        <Typography>Includes extra misc expenditures and costs</Typography>
                     </Box>
                 </Box>
-
-                {/* MID BOX */ }
                 <Box
-                    gridColumn='span 4'
-                    gridRow='span 2'
+                    gridColumn="span 4"
+                    gridRow="span 2"
                     backgroundColor={ colors.primary[400] }
                 >
-                    <Typography variant='h5'
-                                fontWeight='600'
-                                sx={ {p: '30px 30px 0 30px'} }>
+                    <Typography
+                        variant="h5"
+                        fontWeight="600"
+                        sx={ {padding: "30px 30px 0 30px"} }
+                    >
                         Sales Quantity
                     </Typography>
-                    <Box
-                        height='250px'
-                        mt='-20px'
-                    >
-                        <BarChart isDashboard={true} />
+                    <Box height="250px" mt="-20px">
+                        <BarChart isDashboard={ true }/>
                     </Box>
                 </Box>
-                {/* LAST BOX */}
                 <Box
-                    gridColumn='span 4'
-                    gridRow='span 2'
+                    gridColumn="span 4"
+                    gridRow="span 2"
                     backgroundColor={ colors.primary[400] }
-                    p='30px'
+                    padding="30px"
                 >
-                    <Typography variant='h5'
-                                fontWeight='600'
-                                sx={ {mb: '15px'} }>
+                    <Typography
+                        variant="h5"
+                        fontWeight="600"
+                        sx={ {marginBottom: "15px"} }
+                    >
                         Geography Based Traffic
                     </Typography>
-                    <Box
-                        height='200px'
-                    >
-                        <GeographyChart isDashboard={true} />
+                    <Box height="200px">
+                        <GeographyChart isDashboard={ true }/>
                     </Box>
                 </Box>
             </Box>
         </Box>
-
     );
 };
 

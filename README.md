@@ -3,6 +3,8 @@
 [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/built-by-developers.svg)](https://forthebadge.com)
 
+Full interactive Dashboard in ReactJs & Electron, for this example we use false data but in your project you can integrate real API.
+
 ## Getting Started
 
 ```shell
